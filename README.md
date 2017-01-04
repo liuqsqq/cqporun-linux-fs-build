@@ -1,8 +1,6 @@
 # cqporun-linux-fs-build
-introduction
-    This is chongqing porun SDK's rootfs build script.
-    It will build a customed rootfs for you.
-
+#introduction
+	This is chongqing porun SDK's rootfs build script.
 #usage
 	Building base ubuntu system  from https://github.com/geekerlw/linuxfs-build.git
 	Then,you will get ubuntu.tar.gz(or others) file and copy it to our rootdir
