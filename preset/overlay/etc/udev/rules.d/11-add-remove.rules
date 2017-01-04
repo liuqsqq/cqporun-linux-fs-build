@@ -1,0 +1,4 @@
+KERNEL!="sd[a-z][0-9]", GOTO="media_by_label_auto_mount_end"  
+ACTION=="add",RUN+="/usr/bin/python /usr/local/bin/scripts/monitor_upan_event.py add"
+ACTION=="remove",RUN+="/usr/bin/python /usr/local/bin/scripts/monitor_upan_event.py remove"
+LABEL="media_by_label_auto_mount_end"

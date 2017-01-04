@@ -1,0 +1,4 @@
+(if 
+  (contains (window_name) "mp4")
+  begin (geometry "1080x855+-3+-45") (undecorate)  
+)
