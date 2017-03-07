@@ -1,4 +1,0 @@
-(if 
-  (contains (window_name) "electron-quick-start")
-  begin (geometry "1080x1110+-3+810") (undecorate)
-)

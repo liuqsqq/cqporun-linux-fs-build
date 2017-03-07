@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=monitor_ads
+Comment=monitor_ads
+OnlyShowIn=XFCE;
+StartupNotify=false
+Terminal=false
+Hidden=true
+Exec=/usr/local/bin/scripts/check_ads_picture.sh
+

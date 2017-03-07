@@ -1,0 +1,5 @@
+
+(if 
+  (contains (window_name) "xterm")
+  begin (geometry "910x486+66+977")  
+)

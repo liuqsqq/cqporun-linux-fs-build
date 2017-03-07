@@ -1,0 +1,4 @@
+(if 
+  (contains (window_name) "PRAdsPlayer")
+  begin (geometry "1080x900+0+0")  
+)

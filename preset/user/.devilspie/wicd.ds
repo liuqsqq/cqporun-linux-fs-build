@@ -1,0 +1,7 @@
+
+(if 
+  (contains (window_name) "Wicd")
+  begin (geometry "600x800+300+1000") 
+)
+
+
