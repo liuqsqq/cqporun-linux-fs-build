@@ -12,6 +12,9 @@
     20170104
 #ChangLog
     20170104 - first commit
+    20170307 - 
+    1、fix some bugs of the shell,change usr/->user/
+    2、del some useless files
 #Next
     The acquired system is not very well,you will also need to setup somethings in destop
     I will change it
