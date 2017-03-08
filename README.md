@@ -1,12 +1,12 @@
 # cqporun-linux-fs-build
 #introduction
-	This is chongqing porun SDK's rootfs build script.
+    This is chongqing porun SDK's rootfs build script.
 #usage
-	sudo ./bulid-fs-full.sh
-	then, you will get a dir named cqporun-yinka-image-vx.x which is the result.
-        Note:
-        you maybe have to wait for a little long time because the production of base file system 
-        if you dont't have a base file system named ubuntu_base.tar.gz in rootdir
+    sudo ./bulid-fs-full.sh
+    then, you will get a dir named cqporun-yinka-image-vx.x which is the result.
+    Note:
+    you maybe have to wait for a little long time because the production of base file system 
+    if you dont't have a base file system named ubuntu_base.tar.gz in rootdir
 #version
     20170104
 #ChangLog
