@@ -83,7 +83,8 @@ cat << EOF | sudo chroot $TARGET_ROOTFS_DIR
 usermod -a -G netdev $USER_NAME
 # install wicd\dhcp server\screen split tool\print-cups\usb-4g
 apt update && apt upgrade -y
-apt install -y isc-dhcp-server devilspie wicd cups hplip usb-modeswitch libnss3 libxss1 
+apt install -y isc-dhcp-server devilspie wicd cups hplip usb-modeswitch libnss3 libxss1 libncurses5-dev 
+apt install -y python-bluez bluez-obexd expect
 apt install -y openssh-server vsftpd
 
 # install yinka-utils deb packages,include a plentys of tools ,eg: updater yinkad and so on
@@ -91,6 +92,9 @@ dpkg -i ./prebuild/yinka-utils_1.0-2ubuntu2_armhf.deb
 dpkg -i ./prebuild/yinka-player_1.0.0-1_armhf.deb
 apt -f -y install 
 
+
+
+ln -s /usr/local/soft/autoprint/autoprint /usr/bin/autoprint
 systemctl enable yinkad
 systemctl enable yinka-updater
 

@@ -30,4 +30,4 @@ root	ALL=(ALL:ALL) ALL
 #includedir /etc/sudoers.d
 cqutprint ALL=(ALL)NOPASSWD:/usr/local/bin/scripts/change_network_2_wifi.sh
 cqutprint ALL=(ALL)NOPASSWD:/usr/local/bin/scripts/change_network_2_4g.sh
-
+cqutprint ALL=(ALL)NOPASSWD:/usr/local/bin/scripts/bluetooth_pair.sh
