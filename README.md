@@ -1,6 +1,6 @@
 # cqporun-linux-fs-build
 
-#introduction
+##introduction
 This is chongqing porun SDK's rootfs build script.
 ##usage
 sudo ./bulid-fs-full.sh
