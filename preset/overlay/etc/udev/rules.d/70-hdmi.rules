@@ -1,0 +1,1 @@
+SUBSYSTEM=="drm", ACTION=="change", RUN+="/bin/su - cqutprint -c /usr/local/bin/hdmi-toggle"
