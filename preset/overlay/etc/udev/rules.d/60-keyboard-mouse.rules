@@ -1,0 +1,3 @@
+ACTION=="add", SUBSYSTEM=="usb",ENV{XAUTHORITY}="/home/cqutprint/.Xauthority", ENV{DISPLAY}=":0",RUN+="/usr/bin/python /usr/local/bin/scripts/monitor_xinput_devices.py add"
+
+ACTION=="remove", SUBSYSTEM=="usb",ENV{XAUTHORITY}="/home/cqutprint/.Xauthority", ENV{DISPLAY}=":0",RUN+="/usr/bin/python /usr/local/bin/scripts/monitor_xinput_devices.py remove"

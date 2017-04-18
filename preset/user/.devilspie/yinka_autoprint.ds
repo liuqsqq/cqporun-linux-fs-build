@@ -1,0 +1,4 @@
+(if 
+  (matches (window_name) "yinka-autoprint")
+  begin (geometry "1080x1110+-3+810") (undecorate)
+)

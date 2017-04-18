@@ -1,0 +1,4 @@
+(if
+  (contains (window_class) "Wicd-client.py")
+  begin (geometry "600x800+300+1000")
+)

@@ -5,7 +5,7 @@ do
    ps -fe|grep parole |grep -v grep
    if [ $? -ne 0 ];then
        echo "try to reboot ads....."
-       sh /usr/local/bin/scripts/restart_ads.sh
+	   pkill -f yinka-player
        sleep 2
    else
        echo "ads is already runing....."
@@ -17,7 +17,7 @@ while true
 do
      while true
      do
-         win_id=$(xwininfo -name "PRAdsPlayer" | grep "Window id" | grep -o '0x[0-f][0-f][0-f][0-f][0-f][0-f][0-f]')
+         win_id=$(xwininfo -name "yinka-player" | grep "Window id" | grep -o '0x[0-f][0-f][0-f][0-f][0-f][0-f][0-f]')
          echo $win_id
 	 if [ "$win_id" != "" ];then
              echo "get win_id, break"
@@ -27,47 +27,20 @@ do
      echo $win_id
      while true
      do
-        import -frame -window  $win_id  ./first.jpg
+        import -frame -window  $win_id  /var/tmp/yinka/player/first.jpg
 	sleep 6 
-        win_id=$(xwininfo -name "PRAdsPlayer" | grep "Window id" | grep -o '0x[0-f][0-f][0-f][0-f][0-f][0-f][0-f]')
+        win_id=$(xwininfo -name "yinka-player" | grep "Window id" | grep -o '0x[0-f][0-f][0-f][0-f][0-f][0-f][0-f]')
 	echo $win_id
 	if [ "$win_id" == "" ];then
-            sh /usr/local/bin/scripts/restart_ads.sh
-            while true
-            do
-                echo "try to check whether PRAdsPlayer is exist"
-                ps -fs | grep parole | grep -v grep
-                if [ $? -ne 0 ];then
-                    echo "try to reboot player......"
-                    sh /usr/local/bin/scripts/restart_ads.sh
-                else
-                    echo "player is already running......"
-                    break
-                fi
-                sleep 2
-            done
+            pkill -f yinka-player
 	else
-	    import -frame -window  $win_id ./second.jpg
+	    import -frame -window  $win_id /var/tmp/yinka/player/second.jpg
         fi
-	if [ $(md5sum first.jpg |cut -d ' ' -f1) ==  $(md5sum second.jpg |cut -d ' ' -f1) ];then
+	if [ $(md5sum /var/tmp/yinka/player/first.jpg |cut -d ' ' -f1) ==  $(md5sum /var/tmp/yinka/player/second.jpg |cut -d ' ' -f1) ];then
 	    echo "same"
-	    sh /usr/local/bin/scripts/restart_ads.sh
-            while true
-            do
-	        echo "3s is over,try to check whether parole is exist "
-		ps -fe|grep parole |grep -v grep
-		if [ $? -ne 0 ];then
-		   echo "try to reboot ads....."
-	           sh /usr/local/bin/scripts/restart_ads.sh
-		else
-		   echo "ads is already runing....."
-		   break
-		fi
-	        sleep 2
-            done
-            break
-	    else
-	       echo "diff"
+	    pkill -f yinka-player
+	else
+	    echo "diff"
 	fi
     done
 done

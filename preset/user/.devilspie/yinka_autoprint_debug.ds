@@ -1,0 +1,4 @@
+(if (matches (window_name) "Developer Tools")
+         begin (geometry "1080x700+0+1150")
+)
+~
