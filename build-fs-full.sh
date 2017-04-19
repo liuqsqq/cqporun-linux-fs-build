@@ -10,7 +10,7 @@ LIB_DIR="lib"
 BASE_SYSTEM_NAME="ubuntu_base.tar.gz"
 
 # Directory contains the full rootfs
-TARGET_ROOTFS_DIR="cqporun-yinka-image-v1.1"
+TARGET_ROOTFS_DIR="cqporun-yinka-image-v1.5"
 
 # Make base system
 function make_base_system() {
@@ -32,12 +32,12 @@ function make_base_system() {
     # make basic file-system
     cd $LIB_DIR 
     echo "entering into $LIB_DIR"
-    sudo USERNAME=$USER_NAME BOARDNAME=rk3288 ./build-fs-base.sh
+    USERNAME=$USER_NAME BOARDNAME=rk3288 ./build-fs-base.sh
     
     sudo tar -czf $BASE_SYSTEM_NAME  ubuntu
     cd ..
     echo "leaveing $LIB_DIR "
-    mv $LIB_DIR/$BASE_SYSTEM_NAME ./
+    sudo mv $LIB_DIR/$BASE_SYSTEM_NAME ./
 
 }
 
@@ -88,13 +88,13 @@ apt install -y python-bluez bluez-obexd expect
 apt install -y openssh-server vsftpd
 
 # install yinka-utils deb packages,include a plentys of tools ,eg: updater yinkad and so on
-dpkg -i ./prebuild/yinka-utils_1.0-2ubuntu2_armhf.deb
-dpkg -i ./prebuild/yinka-player_1.0.0-1_armhf.deb
+dpkg -i ./prebuild/yinka-utils_*_armhf.deb
+dpkg -i ./prebuild/yinka-player_*_armhf.deb
 apt -f -y install 
 
 
 
-ln -s /usr/local/soft/autoprint/autoprint /usr/bin/autoprint
+ln -s /usr/local/soft/autoprint/yinka-autoprint /usr/bin/yinka-autoprint
 systemctl enable yinkad
 systemctl enable yinka-updater
 
@@ -102,6 +102,8 @@ systemctl enable yinka-updater
 echo -e "\033[5m\033[34m -------- Extract presets -------- \033[0m"
 cp -av ./preset/overlay/* /
 cp -av ./preset/user/. /home/$USER_NAME/
+
+chown root:root /etc/sudoers
 
 # remove package cache
 echo -e "\033[5m\033[34m -------- Remove none needed packages -------- \033[0m"
