@@ -85,7 +85,7 @@ usermod -a -G netdev $USER_NAME
 apt update && apt upgrade -y
 apt install -y isc-dhcp-server devilspie wicd cups hplip usb-modeswitch libnss3 libxss1 libncurses5-dev 
 apt install -y python-bluez bluez-obexd expect
-apt install -y openssh-server vsftpd
+apt install -y openssh-server vsftpd unzip
 
 # install yinka-utils deb packages,include a plentys of tools ,eg: updater yinkad and so on
 dpkg -i ./prebuild/yinka-utils_*_armhf.deb
