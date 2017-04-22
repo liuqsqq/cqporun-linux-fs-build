@@ -1,13 +1,13 @@
 #!/bin/bash 
 
 ACTION=$1
-
 keyword_keyboard="keyboard"
 keyword_mouse="mouse" 
 
 keyboard=$(cat /proc/bus/input/devices | grep -i $keyword_keyboard | awk -F '"'  '{print $2}' | tail -1 | awk '{print $1}')
 
 if [ "$keyboard" != "" ];then
+	sleep 1
 	if [ $ACTION = "on" ];then
 		yinka-input $keyboard on
 	elif [ $ACTION = "off" ];then
