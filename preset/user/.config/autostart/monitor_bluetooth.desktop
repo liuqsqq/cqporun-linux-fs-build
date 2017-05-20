@@ -7,6 +7,6 @@ Comment=monitor_bluetooth
 OnlyShowIn=XFCE;
 StartupNotify=false
 Terminal=false
-Hidden=false
+Hidden=true
 Exec=/usr/local/bin/scripts/monitor_bluetooth_obexd.sh
 

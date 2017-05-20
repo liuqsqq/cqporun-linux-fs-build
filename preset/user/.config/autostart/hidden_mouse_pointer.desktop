@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=hidden_mouse_pointer
+Comment=hidden_mouse_pointer
+OnlyShowIn=XFCE;
+StartupNotify=false
+Terminal=false
+Hidden=false
+Exec=unclutter -display :0.0 -idle 1
+

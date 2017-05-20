@@ -6,7 +6,7 @@ import os
 
 
 url = "127.0.0.1"
-port = 8088
+port = 8099
 def send_upan_message_2_autoprint(requrl):
     ret = True	
     try:

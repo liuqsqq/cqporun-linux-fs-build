@@ -10,7 +10,7 @@ LIB_DIR="lib"
 BASE_SYSTEM_NAME="ubuntu_base.tar.gz"
 
 # Directory contains the full rootfs
-TARGET_ROOTFS_DIR="cqporun-yinka-image-v1.5"
+TARGET_ROOTFS_DIR="cqporun-yinka-image-v1.6"
 
 # Make base system
 function make_base_system() {
@@ -20,8 +20,7 @@ function make_base_system() {
         echo "+ Setting up build-fs-base submodule"
         git submodule init
     fi
-    git submodule update --init --recursive    
-
+    git submodule update --remote --init --recursive    
     if test ! -f $LIB_DIR/build-fs-base.sh;
     then
         echo There is something wrong with your source tree.
@@ -52,7 +51,7 @@ fi
 
 # create target dir and clean
 if [  -e $TARGET_ROOTFS_DIR ]; then
-    rm -rf  $TARGET_ROOTFS_DIR
+    sudo rm -rf  $TARGET_ROOTFS_DIR
 fi
 
 echo -e "\033[36m Make rootfs target dir \033[0m"
@@ -83,7 +82,7 @@ cat << EOF | sudo chroot $TARGET_ROOTFS_DIR
 usermod -a -G netdev $USER_NAME
 # install wicd\dhcp server\screen split tool\print-cups\usb-4g
 apt update && apt upgrade -y
-apt install -y isc-dhcp-server devilspie wicd cups hplip usb-modeswitch libnss3 libxss1 libncurses5-dev 
+apt install -y isc-dhcp-server devilspie wicd cups hplip usb-modeswitch libnss3 libxss1 libncurses5-dev unclutter
 apt install -y python-bluez bluez-obexd expect
 apt install -y openssh-server vsftpd unzip
 
