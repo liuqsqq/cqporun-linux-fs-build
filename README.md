@@ -21,6 +21,8 @@ This is chongqing porun SDK's rootfs build script.
 	3、modify build-fs-full.sh for .gitmodules
 	20170401
 	1、add hdmi hot-plug detection
+   20170520 -
+	add ngrok,update player
 ## Next
 	The acquired system is not very well,you will also need to setup somethings in destop
 	I will change it
